@@ -1,0 +1,141 @@
+body {
+		width:960px;
+		background-color: rgb(44, 175, 32);
+		background-image: linear-gradient(rgb(17, 99, 17), black);
+		margin: auto;
+}
+
+h1 {
+		font-family: "Audiowide", sans-serif;
+}
+
+.header {
+		text-align: center;
+		font-size: 30px;
+		color: rgb(195, 230, 233);
+		padding: 50px;
+		background-color: rgb(172, 204, 177);
+		background-image: url(Kuvat/Cam.jpg);
+		background-repeat: no-repeat;
+		background-size: cover ;
+		height: 180px; 
+}
+
+.header1 {
+		position: relative;
+		width: 960px;
+		height: 280px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+}
+
+.nav {
+		overflow: hidden;
+		background-color: rgb(8, 10, 9);
+}
+
+.nav a {
+		float: left;
+		display: block;
+		font-family: "Audiowide", sans-serif;
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		padding: 20px 74px;
+}
+
+.nav a:hover {
+		background-color:rgb(103, 104, 104);
+		color: rgb(16, 224, 27);
+}
+
+.section {
+		height: 850px;
+		background-image: url(Kuvat/Bike.jpg);
+		background-size: cover;
+		overflow: hidden;
+		opacity: 1.0;
+		color:rgb(255, 255, 255);
+		text-align: center;
+		font-size: 20px;
+		padding: 60px 150px;
+		text-shadow: 2px 2px 4px rgb(4, 165, 4);
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer {
+		background-color: black;
+		color: aliceblue;
+		overflow: hidden;
+		padding: 0px 10px;
+		border-top: solid 2px;
+		border-bottom: solid 2px;
+}
+
+div.gallery {
+		border: 1px solid white;
+		float: left;
+		height: auto;
+		background-color: lightslategray;
+}		
+
+div.desc {
+		padding: 12px;
+		background-color: lightslategray;
+		text-align: center;
+		color: white;
+		font-family: cursive;
+}
+
+.drone {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 20px;
+		filter: grayscale(100%);
+}
+
+.drone:hover {
+		filter: none;
+		
+}
+
+.contact1 {
+		width: 918px;
+		height: 200px;
+		border: solid 1px;
+		background-color: black;
+		color: white;
+		font-family: monospace;
+		padding: 20px;
+		overflow: hidden;
+		text-align: center;
+}
+
+.contact2 {
+		width: 350px;
+		height: 430px;
+		float: left;
+		background-color: black;
+		color: white;
+		font-family: monospace;
+		padding: 20px;
+		overflow: hidden;
+		border: solid 1px;
+}
+
+.contact3 {
+		width: 526px;
+		height: 430px;
+		float: left;
+		background-color: black;
+		color: white;
+		padding: 20px;
+		border: solid 1px;
+}
+
+.button {
+		padding: 4px 15px;
+}
