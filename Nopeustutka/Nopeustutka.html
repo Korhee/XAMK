@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ylinopeus laskuri</title>
+</head>
+<body onload="alusta();">
+    <center>
+    <img src="policesiren.gif"> 
+    <h1>Nopeustutka</h1>
+    <p>Nopeusrajoitus:</p>
+    <input id="nopeusRajoitus">
+    <br>
+    <p>Auton nopeus:</p>
+    <input id="autonNopeus">
+    <br><br>
+    <button type="button" onclick="tutki()">Tutki</button>
+    <br><br>
+    <div id="tulosta"></div>
+
+    <script>
+        function alusta() {
+            document.getElementById("nopeusRajoitus").focus(); //Kursori siirtyy sivun latauduttua kohtaan nopeusrajoitus
+        }
+        function tutki() {
+            var tuomio = "";
+            var noprajoitus = Number(document.getElementById("nopeusRajoitus").value); //Syötetään luku nopeusrajoitukselle
+            var autnopeus = Number(document.getElementById("autonNopeus").value); //Syötetään luku autonnopeudelle
+            var erotus = autnopeus - noprajoitus; //Lasketaan autonnopeuden ja nopeusrajoituksen erotus
+
+            //Verrataan nopeus erotuksia ja jos nopeusrajoitus on 60km/h tai enemmän sakon määrä pienenee.
+            //Haluaisin palautetta että voiko tämän tehdä jotenkin yksinkertaisemmin.
+            if (noprajoitus >= autnopeus) {
+                tuomio = "Toivota hyvää matkaa."
+            }
+            else if (erotus > 0 && erotus < 11 && noprajoitus >59) {
+                tuomio = "Määrää liikennevirhemaksu 70€"
+            }
+            else if (erotus > 0 && erotus < 11) {
+                tuomio = "Määrää liikennevirhemaksu 100€"
+            }
+            else if (erotus > 10 && erotus < 16 && noprajoitus >59) {
+                tuomio = "Määrää liikennevirhemaksu 140€"
+            }
+            else if (erotus > 10 && erotus < 16) {
+                tuomio = "Määrää liikennevirhemaksu 170€"
+            }
+            else if (erotus > 15 && erotus < 21 && noprajoitus >59) {
+                tuomio = "Määrää liikennevirhemaksu 170€"
+            }
+            else if (erotus > 15 && erotus < 21) {
+                tuomio = "Määrää liikennevirhemaksu 200€"
+            }
+            else if (erotus > 20) {
+                tuomio = "Kysy tulot ja laske päiväsakko!"
+            }
+
+            
+            document.getElementById("tulosta").innerHTML = tuomio; //Tulostetaan tuomio
+
+        }
+        
+        </script>
+
+</body>
+</html>

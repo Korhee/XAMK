@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Katsotut leffat</title>
+</head>
+<style>
+    div {
+        font-size: 20px;
+    }
+</style>
+<body>
+    <center>
+    <h2>Kirjoita leffan nimi</h2>
+    <input id="leffa"><br><br>
+    <button onclick="lisaa();">Lisää leffa</button>
+    <button onclick="tulosta();">Tulosta</button>
+    <button onclick="hae();">Hae</button>
+    <br><br>
+    <div id="tulostusAlue"></div>
+
+    <script>
+        let leffat = [];    //Lisäsin arrayhin jo joitakin leffoja
+        leffat = ["Aliens","District 9","Mad Max","Saving Private Ryan","Terminator 2","Lord of the Rings",
+        "Matrix","Titanic","Army of Dead","Star Wars","Green Book","Batman","Jaws","007 Casino Royal"]
+        function lisaa() { //Lisää leffan arrayhin
+            let leffa = document.getElementById("leffa").value;
+            leffat.push(leffa);
+            document.getElementById("leffa").value = ""; //Tyhjentää input kentän kun leffa on lisätty
+        }
+        function tulosta() {
+            leffat.sort(); // Järjestää leffat aakkosjärjestykseen
+            let tulostus = "";
+            for(let i = 0;i < leffat.length;i++) { //Käy arrayn läpi
+                tulostus += "<br>" + leffat[i];
+            }
+            
+            document.getElementById("tulostusAlue").innerHTML = tulostus;
+        }
+        function hae() {
+            let leffa = document.getElementById("leffa").value;
+            let tulostus = "";
+            let onkoKatsottu = false;
+            for(let i = 0;i < leffat.length;i++) {
+                if (leffa == leffat[i]) { //Tutkitaan onko leffa katsottu vai ei
+                    onkoKatsottu = true;
+                }
+            }
+                if (onkoKatsottu) {
+                    tulostus = "Katsottu.";
+                }
+                else {
+                    tulostus = "Ei katsottu!"
+                }
+                document.getElementById("tulostusAlue").innerHTML = tulostus;
+            }
+    </script>
+</body>
+</html>
